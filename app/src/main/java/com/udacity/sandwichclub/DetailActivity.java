@@ -71,15 +71,15 @@ public class DetailActivity extends AppCompatActivity {
 
     private void populateUI(Sandwich sandwich) {
 
+        //Adding description to the UI
         String sandwichDescription = sandwich.getDescription();
         descriptionTv.setText(sandwichDescription);
 
+        //Adding place of origin to the UI
         String sandwichPlaceOfOrigin = sandwich.getPlaceOfOrigin();
-        if (sandwichPlaceOfOrigin == "") {
-            sandwichPlaceOfOrigin = "There is no particular origin of this sandwich";
-        }
         placeOfOriginTv.setText(sandwichPlaceOfOrigin);
 
+        //Adding other names of sandwich to the UI
         List<String> sandwichAlsoKnownAsStrings = sandwich.getAlsoKnownAs();
         if (!sandwichAlsoKnownAsStrings.isEmpty()) {
             StringBuilder sandwichAlsoKnownAsStringBuilder = new StringBuilder();
@@ -92,6 +92,7 @@ public class DetailActivity extends AppCompatActivity {
             alsoKnownAsTv.setText(sandwichAlsoKnownAsStringBuilder.toString());
         }
 
+        //Adding ingredients to the UI
         List<String> sandwichIngredientStrings = sandwich.getIngredients();
         if (!sandwichIngredientStrings.isEmpty()) {
             StringBuilder sandwichIngredientsStringBuilder = new StringBuilder();

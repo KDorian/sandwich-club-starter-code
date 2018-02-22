@@ -19,8 +19,11 @@ public class JsonUtils {
             JSONObject sandwichJSON = new JSONObject(json);
 
             JSONObject sandwichNameJSON = sandwichJSON.getJSONObject("name");
+
+            //Getting main name of sandwich
             String sandwichMainName = sandwichNameJSON.getString("mainName");
 
+            //Getting other name(s) of sandwich
             JSONArray sandwichAlsoKnownAsJSON = sandwichNameJSON.getJSONArray("alsoKnownAs");
             List<String> sandwichAlsoKnownAs = new ArrayList<>();
             for (int i = 0; i < sandwichAlsoKnownAsJSON.length(); i++) {
@@ -28,12 +31,16 @@ public class JsonUtils {
                 sandwichAlsoKnownAs.add(alternativeSandwichName);
             }
 
+            //Getting origin of sandwich
             String sandwichOrigin = sandwichJSON.getString("placeOfOrigin");
 
+            //Getting description of sandwich
             String sandwichDescription = sandwichJSON.getString("description");
 
+            //Getting image of sandwich
             String sandwichImage = sandwichJSON.getString("image");
 
+            //Getting ingredients of sandwich
             JSONArray sandwichIngredientsJSON = sandwichJSON.getJSONArray("ingredients");
             List<String> sandwichIngredients = new ArrayList<>();
             for (int i = 0; i < sandwichIngredientsJSON.length(); i++) {
