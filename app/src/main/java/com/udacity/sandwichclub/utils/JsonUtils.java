@@ -40,7 +40,7 @@ public class JsonUtils {
                 String ingredient = sandwichIngredientsJSON.getString(i);
                 sandwichIngredients.add(ingredient);
             }
-            
+
             parsedSandwich =
                     new Sandwich(sandwichMainName,
                             sandwichAlsoKnownAs,
@@ -51,12 +51,11 @@ public class JsonUtils {
 
         } catch (JSONException e) {
             e.printStackTrace();
-
             return null;
         }
 
         return parsedSandwich;
-        }
-
     }
+
 }
+
